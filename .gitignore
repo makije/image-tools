@@ -1,2 +1,5 @@
 *.o
 imageinfo
+config.*
+configure
+autom4te.cache/

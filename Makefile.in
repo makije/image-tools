@@ -1,0 +1,17 @@
+CC=gcc
+CFLAGS=-I. -I/usr/include
+DEPS = ImageInfo.h
+OBJ = cli.o ImageInfo.o 
+LIBS=-lopencv_core -lopencv_highgui -lstdc++
+APP=imageinfo
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+$(APP): $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+
+all: cli
+
+clean:
+	rm *.o $(APP)
